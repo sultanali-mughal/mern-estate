@@ -9,6 +9,7 @@ import {
 import { app } from "../firebase";
 
 export default function Profile() {
+  
   const fileRef = useRef(null);
   const { currentUser, loading, error } = useSelector((state) => state.user);
   const [file, setFile] = useState(undefined);
@@ -62,7 +63,7 @@ export default function Profile() {
         />
         <img
           onClick={() => fileRef.current.click()}
-          src={formData.avatar||currentUser.avatar}
+          src={formData.avatar || currentUser.avatar}
           alt="Profile"
           className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2"
         />
