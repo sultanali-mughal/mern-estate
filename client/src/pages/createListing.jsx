@@ -14,7 +14,18 @@ export default function CreateListing() {
   const navigate = useNavigate();
   const [files, setFiles] = useState([]);
   const [formData, setFormData] = useState({
-    imageUrls: []
+    imageUrls: [],
+    name: '',
+    description: '',
+    address: '',
+    type: 'rent',
+    bedrooms: 1,
+    bathrooms: 1,
+    regularPrice: 50,
+    discountedPrice: 0,
+    offer: false,
+    parking: false,
+    furnished: false,
   });
   const [imageUploadError, setImageUploadError] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -137,7 +148,7 @@ export default function CreateListing() {
         setError(data.message);
       }
       navigate(`/listing/${data._id}`);
-    } catch (error) {
+     } catch (error) {
       setError(error.message);
       setLoading(false);
     }
