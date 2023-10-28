@@ -4,6 +4,8 @@ import About from "./pages/about";
 import SignIn from "./pages/signIn";
 import SignUp from "./pages/signUp";
 import Profile from "./pages/profile";
+import CreateListing from "./pages/createListing";
+import UpdateListing from "./pages/updateListing";
 import Header from "./components/header";
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -16,11 +18,17 @@ export default function App() {
       <Route path="/signin" element={<SignIn/>}/> 
       <Route path="/signUp" element={<SignUp/>}/> 
       <Route path="/about" element={<About/>}/> 
+
+      
       <Route element={<PrivateRoute/>}> 
       <Route path="/profile" element={<Profile/>}/> 
+      <Route path="/create-listing" element={<CreateListing/>}/> 
+      <Route path="/update-listing/:listingId" element={<UpdateListing/>}/> 
       </Route>
 
-      <Route path="/Profile" element={<Profile/>}/> 
+
     </Routes>
   </BrowserRouter>;
-}
+};
+
+{/* <Route path="/Profile" element={<Profile/>}/>  */}
