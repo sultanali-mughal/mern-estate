@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
 import { useSelector } from 'react-redux';
 import { Navigation } from 'swiper/modules';
+import Contact from '../components/contact.jsx';
 import 'swiper/css/bundle';
 import {
   FaBath,
@@ -14,7 +15,7 @@ import {
   FaParking,
   FaShare,
 } from 'react-icons/fa';
-import Contact from '../components/contact';
+
 
 // https://sabe.io/blog/javascript-format-numbers-commas#:~:text=The%20best%20way%20to%20format,format%20the%20number%20with%20commas.
 
@@ -93,7 +94,7 @@ export default function Listing() {
               {listing.name} - ${' '}
               {listing.offer
                 ? listing.discountedPrice.toLocaleString('en-US')
-                : listing.regularPrice.toLocaleString('en-US')};
+                : listing.regularPrice.toLocaleString('en-US')}
               {listing.type === 'rent' && ' / month'}
             </p>
             <p className='flex items-center mt-6 gap-2 text-slate-600  text-sm'>
@@ -150,4 +151,4 @@ export default function Listing() {
       )}
     </main>
   );
-}
+};

@@ -128,7 +128,7 @@ export default function CreateListing() {
     try {
       if (formData.imageUrls.length < 1)
         return setError('You must upload at least one image');
-      if (+formData.regularPrice < +formData.discountPrice)
+      if (+formData.regularPrice < +formData.discountedPrice)
         return setError('Discount price must be lower than regular price');
       setLoading(true);
       setError(false);
@@ -290,13 +290,13 @@ export default function CreateListing() {
               <div className='flex items-center gap-2'>
                 <input
                   type='number'
-                  id='discountPrice'
+                  id='discountedPrice'
                   min='0'
                   max='10000000'
                   required
                   className='p-3 border border-gray-300 rounded-lg'
                   onChange={handleChange}
-                  value={formData.discountPrice}
+                  value={formData.discountedPrice}
                 />
                 <div className='flex flex-col items-center'>
                   <p>Discounted price</p>
