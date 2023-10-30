@@ -95,6 +95,7 @@ export default function Profile() {
   };
 
   const handleDeleteUser = async () => {
+    debugger;
     try {
       dispatch(deleteUserStart());
       const res = await fetch(`/api/user/delete/${currentUser._id}`, {

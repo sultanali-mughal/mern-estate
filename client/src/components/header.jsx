@@ -44,7 +44,9 @@ export default function header() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </form>
+        <button>
         <FaSearch className="text-slate-600" />
+        </button>
 
         <ul className="flex gap-4">
         <Link to="/">
